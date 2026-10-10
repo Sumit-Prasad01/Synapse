@@ -1,5 +1,4 @@
 services:
-
   postgres:
     image: postgres:17-alpine
     container_name: postgres
@@ -12,3 +11,6 @@ services:
       POSTGRES_DB: synapse_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
