@@ -10,7 +10,7 @@ def pick_llm(level : str):
         level (str): The level of the question, can be "low", "medium", or "high".
 
     Returns:
-        ChatOpenAI: The LLM instance to be used.
+        ChatGroq: The LLM instance to be used.
     """
     api_key = settings.groq_api_key
 
