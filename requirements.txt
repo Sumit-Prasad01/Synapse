@@ -8,5 +8,8 @@ langgraph>=1.2.11,
 pandas>=3.0.5,
 psycopg2-binary>=2.9.12,
 pyarrow>=25.0.1,
-pydantic>=2.13.4
-langchain-groq
+pydantic>=2.13.4,
+langchain-groq,
+fastapi>=0.115.0,
+uvicorn>=0.30.0,
+streamlit>=1.38.0

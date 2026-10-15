@@ -66,9 +66,13 @@ class DataBaseUtil:
 
 
     def execute_sql(self, query):
+        cursor = None
+        connection = None
         try:
             connection = self.connection
-            cursor = connection.cursor
+            if not connection:
+                return "Error: Database connection is not established."
+            cursor = connection.cursor()
             cursor.execute(query)
             result = cursor.fetchall()
             connection.commit()
@@ -87,16 +91,16 @@ class DataBaseUtil:
 
 
 
-obj = DataBaseUtil({
-    "host" : settings.host,
-    "port" : settings.port,
-    "user" : settings.user,
-    "password" : settings.password,
-    "dbname" : settings.database_name
-})
+if __name__ == "__main__":
+    obj = DataBaseUtil({
+        "host" : settings.host,
+        "port" : settings.port,
+        "user" : settings.user,
+        "password" : settings.password,
+        "dbname" : settings.database_name
+    })
 
+    result = obj.schema_details("public")
 
-result = obj.schema_details("public")
-
-with open("test_schema_details.txt", "w") as f:
-    f.write(result)
+    with open("test_schema_details.txt", "w") as f:
+        f.write(result)

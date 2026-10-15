@@ -30,7 +30,7 @@ def pick_llm(level : str):
 
     elif level.lower() == "medium":
         llm = ChatGroq(
-            model_name =  "llama-3.3-70b-versatile",
+            model_name =  "qwen/qwen3.8-27b",
             temperature = 0,
             api_key=api_key,
             reasoning_effort="low"
