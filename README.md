@@ -164,10 +164,10 @@ sequenceDiagram
     Agent->>DB: Fetch public schema info & sample data
     DB-->>Agent: Tables, columns, sample rows
     Agent->>LLM: Generate Postgres SQL query
-    LLM-->>Agent: "SELECT COUNT(*) FROM users;"
+    LLM-->>Agent: SELECT COUNT(*) FROM users
     Agent->>LLM: Evaluate SQL safety (JudgeSchema)
     LLM-->>Agent: answer: "Yes", comments: "Read-only query"
-    Agent->>DB: Execute: "SELECT COUNT(*) FROM users;"
+    Agent->>DB: Execute: SELECT COUNT(*) FROM users
     DB-->>Agent: [(10000,)]
     Agent->>LLM: Format user-friendly narrative response
     LLM-->>Agent: "There are 10,000 users in the database."
